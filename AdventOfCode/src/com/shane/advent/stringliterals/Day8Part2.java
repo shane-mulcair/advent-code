@@ -8,38 +8,36 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class Day8Part1 {
+public class Day8Part2 {
 public static int getNumLiterals() throws IOException{
 	Charset cs=StandardCharsets.UTF_8;
 	Path filePath = Paths.get("C:\\tools\\literals.txt");
 	List<String> inputs=Files.readAllLines(filePath, cs);
 	int totalLiterals=0;
-	int totalCharacters=0;
+	int totalEncoded=0;
 	for(String s:inputs){
 		totalLiterals+=s.length();
 		char[] c=s.toCharArray();
 		for(int i=0;i<s.length();i++){
-			System.out.println(c[i]);
 			if(c[i]=='\"'){
-				
+				totalEncoded+=3;
 			}
 			else if(c[i]=='\\'&&c[i+1]=='x'){
-				totalCharacters++;
-				i+=3;
+				totalEncoded+=2;
 			}
 			else if(c[i]=='\\'){
-				totalCharacters++;
+				totalEncoded+=4;
 				i++;
 			}
 			else{
-				totalCharacters++;
+				totalEncoded++;
 			}
 			
 		}
 	}
 	System.out.println("Total Literals:"+totalLiterals);
-	System.out.println("Total Values: "+totalCharacters);
+	System.out.println("Total Values: "+totalEncoded);
 	
-	return totalLiterals-totalCharacters;
+	return totalEncoded-totalLiterals;
 }
 }
