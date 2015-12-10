@@ -1,4 +1,4 @@
-package com.shane.advent;
+package com.shane.advent.nicewords;
 
 import java.util.List;
 import java.util.regex.Pattern;

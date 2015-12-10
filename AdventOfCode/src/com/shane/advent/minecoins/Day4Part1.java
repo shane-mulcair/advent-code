@@ -1,4 +1,4 @@
-package com.shane.advent;
+package com.shane.advent.minecoins;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;

@@ -1,4 +1,4 @@
-package com.shane.advent;
+package com.shane.advent.controllights;
 
 import java.util.List;
 
